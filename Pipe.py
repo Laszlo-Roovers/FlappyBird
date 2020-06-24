@@ -1,6 +1,7 @@
 import pygame
 from os import path
 import bird
+import random
 
 class Pipe:
     """Representation of a pipe."""
@@ -16,8 +17,8 @@ class Pipe:
 
         self.top = 0
         self.bottom = 0
-        self.PIPE_TOP = pygame.transform.flip(PIPE_IMG, False, True)
-        self.PIPE_BOTTOM = PIPE_IMG
+        self.PIPE_TOP = pygame.transform.flip(self.PIPE_IMG, False, True)
+        self.PIPE_BOTTOM = self.PIPE_IMG
 
         self.passed = False
         self.set_height()
@@ -38,7 +39,7 @@ class Pipe:
         win.blit(self.PIPE_TOP, (self.x, self.top))
         win.blit(self.PIPE_BOTTOM, (self.x, self.bottom))
 
-    def collide(self, bird: Bird) -> bool:
+    def collide(self, bird) -> bool:
         """Handle collisions pixel-perfectly instead of naively with rects."""
         bird_mask = bird.get_mask()
         top_mask = pygame.mask.from_surface(self.PIPE_TOP)

@@ -12,10 +12,10 @@ import pygame
 import neat
 import time
 import os
-import random
 
 from bird import Bird
 from pipe import Pipe
+from base import Base
 
 os.environ['SDL_VIDEO_CENTERED'] = '1'
 
@@ -24,15 +24,22 @@ WIN_HEIGHT = 800
 
 BG_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "bg.png")))
 
-def draw_window(win, bird) -> None:
+def draw_window(win, bird, pipes, base) -> None:
     """Draw the current window to the screen."""
     win.blit(BG_IMG, (0,0))
+    for pipe in pipes:
+        pipe.draw(win)
+
+    base.draw(win)
+
     bird.draw(win)
     pygame.display.update()
 
 def main() -> None:
     """Run main game loop."""
-    bird = Bird(200, 200)
+    bird = Bird(230, 350)
+    base = Base(730)
+    pipes = [Pipe(700)]
     win = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
     clock = pygame.time.Clock()
 
@@ -46,7 +53,8 @@ def main() -> None:
                 run = False
 
         bird.move()
-        draw_window(win, bird)
+        base.move()
+        draw_window(win, bird, pipes, base)
 
     pygame.quit()
     quit()
