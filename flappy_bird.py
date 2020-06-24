@@ -14,6 +14,8 @@ import time
 import os
 import random
 
+os.environ['SDL_VIDEO_CENTERED'] = '1'
+
 WIN_WIDTH = 500
 WIN_HEIGHT = 800
 
