@@ -13,7 +13,7 @@ class Bird:
     ROT_VEL = 20
     ANIMATION_TIME = 5
 
-    def __init__(self, x, y):
+    def __init__(self, x, y) -> None:
         """Initialize bird's attributes."""
         self.x = x
         self.y = y
@@ -25,14 +25,14 @@ class Bird:
         self.img = self.IMGS[0]
 
 
-    def jump(self):
+    def jump(self) -> None:
         """Make a single flap/jump up."""
         self.vel = -10.5
         self.tick_count = 0
         self.height = self.y
 
 
-    def move(self):
+    def move(self) -> None:
         """Calculate the bird's new position and rotation."""
         self.tick_count += 1
 
@@ -52,7 +52,7 @@ class Bird:
             if self.tilt > -90:
                 self.tilt -= self.ROT_VEL
 
-    def draw(self, win):
+    def draw(self, win) -> None:
         """Update the bird image to the screen."""
         self.img_count += 1
 
