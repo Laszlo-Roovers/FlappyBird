@@ -22,7 +22,6 @@ os.environ['SDL_VIDEO_CENTERED'] = '1'
 WIN_WIDTH = 500
 WIN_HEIGHT = 800
 
-BASE_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "base.png")))
 BG_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "bg.png")))
 
 def draw_window(win, bird) -> None:

@@ -1,12 +1,12 @@
 import pygame
 from os import path
 
-BIRD_IMGS = [pygame.transform.scale2x(pygame.image.load(path.join("imgs", "bird1.png"))),
-            pygame.transform.scale2x(pygame.image.load(path.join("imgs", "bird2.png"))),
-            pygame.transform.scale2x(pygame.image.load(path.join("imgs", "bird3.png")))]
-
 class Bird:
     """Representation of a single bird."""
+
+    BIRD_IMGS = [pygame.transform.scale2x(pygame.image.load(path.join("imgs", "bird1.png"))),
+                pygame.transform.scale2x(pygame.image.load(path.join("imgs", "bird2.png"))),
+                pygame.transform.scale2x(pygame.image.load(path.join("imgs", "bird3.png")))]
 
     IMGS = BIRD_IMGS
     MAX_ROTATION = 25
