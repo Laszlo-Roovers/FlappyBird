@@ -14,13 +14,13 @@ import time
 import os
 import random
 from Bird import Bird
+from Pipe import Pipe
 
 os.environ['SDL_VIDEO_CENTERED'] = '1'
 
 WIN_WIDTH = 500
 WIN_HEIGHT = 800
 
-PIPE_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "pipe.png")))
 BASE_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "base.png")))
 BG_IMG = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "bg.png")))
 
@@ -52,4 +52,5 @@ def main():
     quit()
 
 
+# Call main game loop to be start
 main()
